@@ -26,7 +26,7 @@ const Student = mongoose.model("Student", studentSchema);
 
 // ---------------- ROUTES ----------------
 
-// ✅ GET /students → Retrieve all students
+// GET /students → Retrieve all students
 app.get("/students", async (req, res) => {
   try {
     const students = await Student.find();
@@ -36,7 +36,7 @@ app.get("/students", async (req, res) => {
   }
 });
 
-// ✅ POST /students → Add a new student
+// POST /students → Add a new student
 app.post("/students", async (req, res) => {
   try {
     const { name, age, course } = req.body;
@@ -52,7 +52,7 @@ app.post("/students", async (req, res) => {
   }
 });
 
-// ✅ DELETE /students/:id → Delete a student by ID
+// DELETE /students/:id → Delete a student by ID
 app.delete("/students/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -73,3 +73,4 @@ app.delete("/students/:id", async (req, res) => {
 // Server start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
