@@ -1,4 +1,4 @@
-// Create a Simple Blog API Use Express and MongoDB to store blog posts.
+//Question--> Create a Simple Blog API Use Express and MongoDB to store blog posts.
 //  Each post has: title, content, author, and date. Endpoints: 
 // * GET /posts → Retrieve all posts * POST /posts → Create a new post
 
@@ -56,5 +56,6 @@ app.get("/posts", async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
+
 
 
