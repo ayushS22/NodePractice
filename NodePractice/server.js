@@ -5,7 +5,7 @@ const app = express();
 
 dotenv.config();
 
-// Middleware
+// Middleware for parsing 
 app.use(express.json());
 
 // MongoDB Connection
@@ -73,4 +73,5 @@ app.delete("/students/:id", async (req, res) => {
 // Server start
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
