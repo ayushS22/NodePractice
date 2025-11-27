@@ -7,7 +7,7 @@ import express from "express";
 import mongoose from "mongoose";
 const app = express();
 
-app.use(express.json());
+app.use(express.json());//parsing
 
 mongoose
   .connect("mongodb://127.0.0.1:27017/ayushDb")
@@ -56,6 +56,7 @@ app.get("/posts", async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
+
 
 
 
