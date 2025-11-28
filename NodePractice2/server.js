@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 //app.use(cors());
 
-// ✅ MongoDB connection
+// ✅ MongoDB connection here
 mongoose
   .connect("mongodb://127.0.0.1:27017/taskDB", {
     useNewUrlParser: true,
@@ -103,3 +103,4 @@ const PORT = 5000;
 app.listen(PORT, () =>
   console.log(`🚀 Task Management API running at http://localhost:${PORT}`)
 );
+
