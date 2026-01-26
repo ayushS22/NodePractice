@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 //app.use(cors());
 
-// ✅ MongoDB connection here
+//  MongoDB connection here
 mongoose
   .connect("mongodb://127.0.0.1:27017/taskDB", {
     useNewUrlParser: true,
@@ -15,7 +15,7 @@ mongoose
   .then(() => console.log("✅ Connected to MongoDB"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
 
-// ✅ Task Schema & Model
+//  Task Schema & Model
 const taskSchema = new mongoose.Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
@@ -28,7 +28,7 @@ const taskSchema = new mongoose.Schema({
 
 const Task = mongoose.model("Task", taskSchema);
 
-// ✅ GET /tasks - Fetch all tasks
+//  GET /tasks - Fetch all tasks
 app.get("/tasks", async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -38,7 +38,7 @@ app.get("/tasks", async (req, res) => {
   }
 });
 
-// ✅ POST /tasks - Create a new task
+//  POST /tasks - Create a new task
 app.post("/tasks", async (req, res) => {
   try {
     const { title, description } = req.body;
@@ -58,7 +58,7 @@ app.post("/tasks", async (req, res) => {
   }
 });
 
-// ✅ PUT /tasks/:id - Update task status
+// PUT /tasks/:id - Update task status
 app.put("/tasks/:id", async (req, res) => {
   try {
     const { status } = req.body;
@@ -83,7 +83,7 @@ app.put("/tasks/:id", async (req, res) => {
   }
 });
 
-// ✅ DELETE /tasks/:id - Delete a task
+//DELETE /tasks/:id - Delete a task
 app.delete("/tasks/:id", async (req, res) => {
   try {
     const deletedTask = await Task.findByIdAndDelete(req.params.id);
@@ -98,9 +98,10 @@ app.delete("/tasks/:id", async (req, res) => {
   }
 });
 
-// ✅ Start Server
+// Start Server
 const PORT = 5000;
 app.listen(PORT, () =>
   console.log(`🚀 Task Management API running at http://localhost:${PORT}`)
 );
+
 
