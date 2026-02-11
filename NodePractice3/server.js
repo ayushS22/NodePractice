@@ -14,7 +14,7 @@ mongoose
   .then(() => console.log("connected"))
   .catch((err) => console.error(" MongoDB connection error", err));
 
-//schema
+//create schema
 const myschema = new mongoose.Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
@@ -56,6 +56,7 @@ app.get("/posts", async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
+
 
 
 
