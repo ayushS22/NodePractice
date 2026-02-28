@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 const app = express();
 
 app.use(express.json());//parsing
-
+//mongo connection without .env file
 mongoose
   .connect("mongodb://127.0.0.1:27017/ayushDb")
   .then(() => console.log("connected"))
@@ -56,6 +56,7 @@ app.get("/posts", async (req, res) => {
 
 const PORT = 3000;
 app.listen(PORT, () => console.log(`🚀 Server running at http://localhost:${PORT}`));
+
 
 
 
